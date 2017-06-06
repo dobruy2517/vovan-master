@@ -1,6 +1,5 @@
 import os
 
-import null as null
 import requests
 from bs4 import BeautifulSoup
 
@@ -26,7 +25,7 @@ for url in file_url.readlines():
         title_file.write(title + '\n')
 
     for alt in alts:
-        if alt.get('alt') != None:
+        if alt.get('alt') is not None and len(alt.get('alt')) > 20:
             alt_file.write(alt.get('alt') + '\n')
 
 alt_file.close()
